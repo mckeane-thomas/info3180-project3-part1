@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1>Melon Js Games</h1>
+<h2>Select Either Space Invaders or platformers Game Below Enjoy</h2>
+{% endblock %}
+
+
+		
+{% block js %}
+  <!--
+    <script type="text/javascript" src="/static/lib/melonJS-2.1.0.js"></script>
+    <script type="text/javascript" src="/static/lib/plugins/debug/debugPanel.js"></script>
+    <script type="text/javascript" src="/static/js/game.js"></script>
+    <script type="text/javascript" src="/static/js/enemy.js"></script>
+    <script type="text/javascript" src="/static/js/enemy_manager.js"></script>
+    <script type="text/javascript" src="/static/js/laser.js"></script>
+    <script type="text/javascript" src="/static/js/player.js"></script>
+		
+    <script type="text/javascript" src="/static/js/resources.js"></script>
+
+
+		
+		<script type="text/javascript" src="/static/js/screen/play.js"></script>
+
+<script type="text/javascript">
+			window.onReady(function onReady() {
+				game.onload();
+
+				// Mobile browser hacks
+				if (me.device.isMobile && !navigator.isCocoonJS) {
+					// Prevent the webview from moving on a swipe
+					window.document.addEventListener("touchmove", function (e) {
+						e.preventDefault();
+						window.scroll(0, 0);
+						return false;
+					}, false);
+
+					// Scroll away mobile GUI
+					(function () {
+						window.scrollTo(0, 1);
+						me.video.onresize(null);
+					}).defer();
+
+					me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
+						window.scrollTo(0, 1);
+					});
+				}
+			});
+		</script>
+-->
+{% endblock %}
+
+

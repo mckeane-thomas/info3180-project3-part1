@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div id="screen"> Print Text here</div>
+<h1>This is a Paragraph it should be printed</h1>
+{% endblock %}
+
+
+		
+{% block js %}
+  
+    <script type="text/javascript" src="/static/lib/melonJS-2.1.0.js"></script>
+    <script type="text/javascript" src="/static/lib/plugins/debug/debugPanel.js"></script>
+    <script type="text/javascript" src="/static/js/invaders/game.js"></script>
+    <script type="text/javascript" src="/static/js/invaders/enemy.js"></script>
+    <script type="text/javascript" src="/static/js/invaders/enemy_manager.js"></script>
+    <script type="text/javascript" src="/static/js/invaders/laser.js"></script>
+    <script type="text/javascript" src="/static/js/invaders/player.js"></script>
+		<!--script type="text/javascript" src="build/js/resources.js"></script-->
+    <script type="text/javascript" src="/static/js/invaders/resources.js"></script>
+
+
+		<!--script type="text/javascript" src="js/screens/title.js"></script-->
+		<script type="text/javascript" src="/static/js/invaders/screen/play.js"></script>
+
+<script type="text/javascript">
+			window.onReady(function onReady() {
+				game.onload();
+
+				// Mobile browser hacks
+				if (me.device.isMobile && !navigator.isCocoonJS) {
+					// Prevent the webview from moving on a swipe
+					window.document.addEventListener("touchmove", function (e) {
+						e.preventDefault();
+						window.scroll(0, 0);
+						return false;
+					}, false);
+
+					// Scroll away mobile GUI
+					(function () {
+						window.scrollTo(0, 1);
+						me.video.onresize(null);
+					}).defer();
+
+					me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
+						window.scrollTo(0, 1);
+					});
+				}
+			});
+		</script>
+
+{% endblock %}
+
+
